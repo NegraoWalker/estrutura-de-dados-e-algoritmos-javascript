@@ -49,12 +49,12 @@ console.log(`É um domínio brasileiro? ${emailInfo.isBrazilianDomain ? "Sim" : 
 
 function extractEmailInformation(email) {
     const regex = /^([\w.-]+)@([\w.-]+)$/; // Expressão regular para capturar o nome de usuário e o domínio
-    const match = email.match(regex);
+    const match = email.match(regex); //Retorna um array
     if (match) {
         const username = match[1]; // Grupo 1: Nome de usuário
         const domain = match[2]; // Grupo 2: Domínio
-        const isBrazilianDomain = /\.br$/.test(domain); // Verifica se o domínio termina com ".br"
-        return {username, domain, isBrazilianDomain};
+        const isBrazilianDomain = /\.br$/.test(domain); // Verifica se o domínio termina com ".br" retornando true
+        return {username, domain, isBrazilianDomain}; //Retorno de um objeto
     } else {
         throw new Error("Email inválido");
     }
